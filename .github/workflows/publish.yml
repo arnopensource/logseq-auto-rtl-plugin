@@ -15,10 +15,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
           node-version: '16.x' # You might need to adjust this value to your own version
+
       - name: Build
         id: build
         run: |
@@ -29,6 +31,7 @@ jobs:
           zip -r ${{ env.PLUGIN_NAME }}.zip ${{ env.PLUGIN_NAME }}
           ls
           echo "::set-output name=tag_name::$(git tag --sort version:refname | tail -n 1)"
+
       - name: Create Release
         uses: ncipollo/release-action@v1
         id: create_release
