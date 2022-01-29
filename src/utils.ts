@@ -10,3 +10,9 @@ export function isBlockEntityArray(blocks : (BlockEntity | BlockUUIDTuple)[]) : 
 export async function fetchBlockEntityArray(blocksUUID : BlockUUIDTuple[]) : Promise<BlockEntity[]> {
     return Promise.all(blocksUUID.map(uuidTuple => logseq.Editor.getBlock(uuidTuple[1])))
 }
+
+// Generate a css selector which finds a specific ref in the data-refs or data-refs-self arrays
+export function selectBlockWithRef(prop: "data-refs" | "data-refs-self", value: string) : string {
+    return `div.ls-block[${prop}*="\\"${value}\\""]`
+}
+

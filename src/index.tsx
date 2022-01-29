@@ -1,5 +1,6 @@
 import '@logseq/libs';
 import {applyRTL, applyRTLRecursively, rtlIndicator} from "./rtl";
+import {selectBlockWithRef} from "./utils";
 
 const main = async () => {
   console.log('logseq-auto-rl-plugin loaded');
@@ -18,11 +19,12 @@ const main = async () => {
   }, 200);
 
   logseq.provideStyle(`
-    div[data-refs-self*=${rtlIndicator}] {
-        display: none;
+    ${selectBlockWithRef("data-refs-self", rtlIndicator)} {
+        color: red;
+        /*display: none;*/
     }
 
-    div.ls-block[data-refs-self*=${rtlIndicator}] + div {
+    ${selectBlockWithRef("data-refs-self", rtlIndicator)} + div {
         direction: rtl;
     }
   `);
