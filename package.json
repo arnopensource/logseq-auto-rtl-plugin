@@ -2,7 +2,14 @@
   "logseq": {
     "id": "logseq-auto-rtl-plugin",
     "title": "logseq-auto-rtl-plugin",
-    "icon": "./icon.svg"
+    "description": "A plugin to support right-to-left editing",
+    "author": "abc3354",
+    "repo": "https://github.com/abc3354/logseq-auto-rtl-plugin",
+    "icon": "./icon.svg",
+    "theme": false,
+    "sponsors": [
+      "Motlaq"
+    ]
   },
   "name": "logseq-auto-rtl-plugin",
   "version": "0.1",
@@ -16,7 +23,7 @@
     "build": "parcel build src/index.html --public-url ./"
   },
   "keywords": [],
-  "author": "Motlaq, abc3354",
+  "author": "abc3354",
   "license": "MIT",
   "dependencies": {
     "@logseq/libs": "^0.0.1-alpha.34"
