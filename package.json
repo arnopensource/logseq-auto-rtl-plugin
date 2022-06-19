@@ -29,6 +29,6 @@
     "@logseq/libs": "^0.0.1-alpha.34"
   },
   "devDependencies": {
-    "parcel": "^2.5.0"
+    "parcel": "^2.6.1"
   }
 }
